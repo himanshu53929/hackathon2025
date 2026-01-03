@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webcam Overlay Tasks</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+    <!-- Fullscreen video -->
+    <video id="webcam" autoplay playsinline muted></video>
+
+    <!-- Tasks overlay -->
+    <div class="tasks-overlay">
+        <h2>Tasks</h2>
+        <ul>
+            <li>Task 1: Finish layout</li>
+            <li>Task 2: Connect webcam</li>
+            <li>Task 3: Style page</li>
+            <li>Task 4: Add interactivity</li>
+        </ul>
+    </div>
+
+    <script>
+        // Access webcam
+        const video = document.getElementById('webcam');
+
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    video.srcObject = stream;
+                })
+                .catch(err => {
+                    console.error("Error accessing webcam: ", err);
+                    alert("Unable to access webcam. Please allow permissions.");
+                });
+        } else {
+            alert("Webcam not supported in this browser.");
+        }
+    </script>
+</body>
+</html>

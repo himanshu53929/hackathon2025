@@ -1,0 +1,51 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fullscreen video */
+#webcam {
+    position: fixed;       /* fixed to fill the screen */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;     /* crop/scale video to fill screen */
+    z-index: -1;           /* behind everything */
+}
+
+/* Tasks overlay */
+.tasks-overlay {
+    position: fixed;        /* stays in place over video */
+    top: 0;
+    right: 0;
+    width: 30%;             /* right side width */
+    height: 100%;
+    padding: 40px;
+    overflow-y: auto;       /* scroll if tasks are too many */
+    display: flex;
+    flex-direction: column;
+
+    background: transparent; /* remove background, only text visible */
+}
+
+
+/* Tasks heading */
+.tasks-overlay h2 {
+    margin-bottom: 20px;
+    color: #1f2933;
+    font-size: 2rem;
+}
+
+/* Task list */
+.tasks-overlay ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.tasks-overlay li {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
