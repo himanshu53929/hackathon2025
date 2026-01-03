@@ -17,7 +17,7 @@
 }
 
 /* Tasks overlay */
-.tasks-overlay {
+.reminders {
     position: fixed;        /* stays in place over video */
     top: 0;
     right: 0;
